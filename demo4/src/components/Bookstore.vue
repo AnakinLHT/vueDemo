@@ -2,10 +2,14 @@
   <div>
       <div class="layout-padding">
         <div class="row gutter wrap justify-stretch content-center">
+          <div class="col-3">
+            <router-link :to="'/genre'">Genre</router-link>
+          </div>
+        </div>
+        <div class="row gutter wrap justify-stretch content-center">
           <div class="col-8">
             <div class="row">
               <div class="col-3">
-                genre {{$route.params.genre}}
                 <q-field
                   icon="book"
                   label="Select book"/>
