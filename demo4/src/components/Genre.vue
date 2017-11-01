@@ -33,22 +33,6 @@ import availableBooksByGenre from '../books/availableBooksByGenre';
 export default {
   name: 'Genre',
   computed: {
-    booksForSelection(){
-      var cart = this.cart;
-      var availableBooks = this.availableBooks;
-      return R.map((it) => {
-        return {
-          label: it,
-          value: it
-        }
-      }, R.filter((it) => !R.contains(it, cart), availableBooks));
-    },
-    availableBooks(){
-      if(availableBooksByGenre[this.$route.params.genre]){
-        return availableBooksByGenre[this.$route.params.genre];
-      }
-      return [];
-    },
     genre(){
       return R.keys(availableBooksByGenre);
     }

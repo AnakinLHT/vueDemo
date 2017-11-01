@@ -59,7 +59,16 @@
           <div class="col-4">
             <div>
               <q-list highlight>
-                <q-list-header>Cart</q-list-header>
+                <q-list-header>
+                  <div class="row gutter wrap justify-between content-center">
+                    <div class="col-4">
+                      Cart
+                    </div>
+                    <div class="col-4" style="text-align: right">
+                      <router-link :to="'/order'"><q-icon name="fa-shopping-cart" size="2em"/> Checkout</router-link>
+                    </div>
+                  </div>
+                </q-list-header>
                 <span v-for="book in cart">
                   <q-item>
                     <q-item-main>

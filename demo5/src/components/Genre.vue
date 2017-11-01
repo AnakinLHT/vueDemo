@@ -28,29 +28,14 @@
 import {QList, QListHeader, QItem, QItemMain, QItemTile, QItemSeparator, QItemSide} from 'quasar-framework';
 import * as R from 'ramda';
 
-import availableBooksByGenre from '../books/availableBooksByGenre';
-
 export default {
   name: 'Genre',
   computed: {
-    booksForSelection(){
-      var cart = this.cart;
-      var availableBooks = this.availableBooks;
-      return R.map((it) => {
-        return {
-          label: it,
-          value: it
-        }
-      }, R.filter((it) => !R.contains(it, cart), availableBooks));
-    },
-    availableBooks(){
-      if(availableBooksByGenre[this.$route.params.genre]){
-        return availableBooksByGenre[this.$route.params.genre];
-      }
-      return [];
+    availableBooksByGenre(){
+      return this.$store.state.bookStore.availableBooksByGenre;
     },
     genre(){
-      return R.keys(availableBooksByGenre);
+      return R.keys(this.availableBooksByGenre);
     }
   },
   components: {
