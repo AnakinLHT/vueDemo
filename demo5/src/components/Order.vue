@@ -18,7 +18,7 @@
                     </q-item-main>
                     <q-item-side right>
                       <div>
-                        <span>@ ${{book.price}} x{{book.quantity}}</span>
+                        <span>@ ${{Math.round(book.price * 100) / 100}} x{{book.quantity}}</span>
                       </div>
                     </q-item-side>
                     <q-item-side right>
@@ -35,7 +35,7 @@
                     </q-item-main>
                     <q-item-side right>
                       <div>
-                        <span>${{totalPrice}}</span>
+                        <span>${{Math.round(totalPrice * 100) / 100}}</span>
                       </div>
                     </q-item-side>
                   </q-item>
